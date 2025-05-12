@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %} - Feedback{% endblock %}
+
+{% block content %}
+<section class="feedback-header">
+    <h1><i class="fas fa-comment"></i> Provide Feedback</h1>
+    <p>Help us improve our mental health analysis tool</p>
+</section>
+
+<section class="feedback-content">
+    <div class="card">
+        <div class="card-header">
+            <h2>Feedback Form</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ url_for('feedback') }}" class="feedback-form">
+                <div class="form-group">
+                    <label for="prediction">Which prediction are you providing feedback about?</label>
+                    <select id="prediction" name="prediction" required>
+                        <option value="" disabled selected>Select a prediction</option>
+                        <option value="Anxiety">Anxiety</option>
+                        <option value="Depression">Depression</option>
+                        <option value="Suicidal">Suicidal</option>
+                        <option value="Stress">Stress</option>
+                        <option value="Bipolar">Bipolar</option>
+                        <option value="Personality disorder">Personality disorder</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Was the prediction accurate?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="accurate" value="yes" required>
+                            <span>Yes</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="accurate" value="no">
+                            <span>No</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="accurate" value="unsure">
+                            <span>Unsure</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="feedback">Additional comments:</label>
+                    <textarea id="feedback" name="feedback" rows="5" placeholder="Please share any additional feedback about the analysis tool..."></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Feedback
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h2>Why Your Feedback Matters</h2>
+        </div>
+        <div class="card-body">
+            <div class="feedback-importance">
+                <p>Your feedback is invaluable to us for several reasons:</p>
+                <ul>
+                    <li><strong>Improving accuracy:</strong> We use your feedback to refine our models and enhance prediction accuracy.</li>
+                    <li><strong>Resource relevance:</strong> Your input helps us provide more helpful and appropriate resources.</li>
+                    <li><strong>Usability enhancements:</strong> We continually update the interface based on user suggestions.</li>
+                    <li><strong>Research advancement:</strong> Feedback contributes to the broader field of mental health analysis technology.</li>
+                </ul>
+                <p>Thank you for taking the time to share your thoughts!</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

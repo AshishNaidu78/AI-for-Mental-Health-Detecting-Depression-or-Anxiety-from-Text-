@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} - Analysis History{% endblock %}
+
+{% block content %}
+<section class="history-header">
+    <h1><i class="fas fa-history"></i> Analysis History</h1>
+    <p>View your recent text analysis results</p>
+</section>
+
+<section class="history-content">
+    {% if history and history|length > 0 %}
+    <div class="card">
+        <div class="card-header">
+            <h2>Your Recent Analyses</h2>
+            <a href="{{ url_for('clear_history') }}" class="btn-danger clear-history">
+                <i class="fas fa-trash"></i> Clear History
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="history-list full-history">
+                {% for entry in history %}
+                <div class="history-item">
+                    <div class="history-text">{{ entry.text }}</div>
+                    <div class="history-meta">
+                        <span class="prediction {% if entry.prediction == 'Normal' %}normal{% elif entry.prediction == 'Suicidal' %}critical{% else %}concern{% endif %}">
+                            <i class="fas {% if entry.prediction == 'Normal' %}fa-check-circle{% elif entry.prediction == 'Suicidal' %}fa-exclamation-triangle{% else %}fa-exclamation-circle{% endif %}"></i>
+                            {{ entry.prediction }}
+                        </span>
+                        <span class="confidence">{{ (entry.confidence * 100)|round(1) }}% confidence</span>
+                        <span class="model"><i class="fas fa-robot"></i> {{ entry.model }}</span>
+                        <span class="timestamp"><i class="far fa-clock"></i> {{ entry.timestamp }}</span>
+                    </div>
+                    <div class="history-actions">
+                        <a href="{{ url_for('resources', condition=entry.prediction) }}" class="btn-sm">
+                            <i class="fas fa-info-circle"></i> Resources
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="no-history">
+        <div class="empty-state">
+            <i class="fas fa-history"></i>
+            <h2>No Analysis History</h2>
+            <p>Your analysis history will appear here once you've analyzed some text.</p>
+            <a href="{{ url_for('index') }}" class="btn-primary">Go to Analysis</a>
+        </div>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

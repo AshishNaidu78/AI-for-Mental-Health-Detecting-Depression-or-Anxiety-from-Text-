@@ -1,0 +1,4 @@
+{"timestamp": "2025-05-11T00:53:50.300767", "prediction": "Anxiety", "accurate": true, "feedback": "good"}
+{"timestamp": "2025-05-11T01:22:36.278594", "prediction": "Anxiety", "accurate": true, "feedback": "ok"}
+{"timestamp": "2025-05-11T01:27:35.899518", "prediction": "Suicidal", "accurate": true, "feedback": "helllo"}
+{"timestamp": "2025-05-11T20:42:50.522480", "prediction": "Depression", "accurate": false, "feedback": "happy"}

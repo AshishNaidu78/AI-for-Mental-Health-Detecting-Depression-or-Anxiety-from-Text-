@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %} - About{% endblock %}
+
+{% block content %}
+<section class="about-header">
+    <h1><i class="fas fa-info-circle"></i> About This Application</h1>
+    <p>Understanding our mental health analysis tool</p>
+</section>
+
+<section class="about-content">
+    <div class="card">
+        <div class="card-header">
+            <h2>How It Works</h2>
+        </div>
+        <div class="card-body">
+            <div class="about-section">
+                <h3><i class="fas fa-brain"></i> Natural Language Processing</h3>
+                <p>This application uses advanced Natural Language Processing (NLP) models to analyze text for potential indicators of mental health conditions. These models have been trained on large datasets to recognize patterns and language associated with various mental health states.</p>
+            </div>
+            
+            <div class="about-section">
+                <h3><i class="fas fa-laptop-code"></i> Available Models</h3>
+                <p>We offer multiple language models specialized for mental health analysis:</p>
+                <ul>
+                    <li><strong>Telugu BERT:</strong> Specialized for Telugu language text analysis</li>
+                    <li><strong>XLM-RoBERTa:</strong> Multilingual model supporting cross-lingual analysis</li>
+                    <li><strong>IndicBERT:</strong> Optimized for Indian languages</li>
+                    <li><strong>MuRIL:</strong> Multilingual Representations for Indian Languages</li>
+                </ul>
+            </div>
+            
+            <div class="about-section">
+                <h3><i class="fas fa-chart-line"></i> Analysis Process</h3>
+                <p>When you submit text, our system:</p>
+                <ol>
+                    <li>Processes the input through the selected model</li>
+                    <li>Evaluates various linguistic patterns and indicators</li>
+                    <li>Categorizes the text into one of several mental health categories</li>
+                    <li>Provides a confidence score for the prediction</li>
+                    <li>Offers relevant resources based on the analysis</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Updated Disclaimer -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Important Disclaimer</h2>
+        </div>
+        <div class="card-body">
+            <div class="disclaimer">
+                <i class="fas fa-exclamation-triangle disclaimer-icon"></i>
+                <div class="disclaimer-text">
+                    <p>This tool is intended for <strong>educational and awareness purposes only</strong>. It is not a substitute for a licensed mental health professional's advice, diagnosis, or treatment.</p>
+                    
+                    <p>If you or someone you know is in emotional distress or facing a mental health emergency in India, please seek help immediately:</p>
+                    
+                    <ul class="emergency-contacts">
+                        <li>Call iCall Mental Health Helpline: <strong>+91 9152987821</strong></li>
+                        <li>Call AASRA (Mumbai-based): <strong>+91-9820466726</strong></li>
+                        <li>Contact Vandrevala Foundation Helpline: <strong>1860 266 2345</strong> or <strong>+91 9999 666 555</strong></li>
+                        <li>Visit the nearest hospital or consult a certified mental health expert</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Privacy Policy</h2>
+        </div>
+        <div class="card-body">
+            <div class="about-section">
+                <h3><i class="fas fa-shield-alt"></i> Data Protection</h3>
+                <p>We take your privacy seriously:</p>
+                <ul>
+                    <li>Data is processed locally on our secure servers</li>
+                    <li>We do not store the full text of your submissions</li>
+                    <li>Analysis history is stored in your browser session only</li>
+                    <li>Anonymous data points may be collected for improving the models</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

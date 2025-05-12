@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Health{% endblock %}
+
+{% block content %}
+  <section class="health-check">
+    <h1>Application Health</h1>
+    <div class="health-status">
+      <p><strong>Status:</strong> <span class="status-{{ status|lower }}">{{ status }}</span></p>
+      <p><strong>Models Loaded:</strong> {{ models_loaded }}</p>
+      <p><strong>Model Count:</strong> {{ model_count }}</p>
+    </div>
+  </section>
+{% endblock %}
